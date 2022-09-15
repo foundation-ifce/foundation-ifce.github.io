@@ -43,9 +43,8 @@ A potência de um aparelho elétrico pode ser calculada multiplicando a tensão 
 
 ## Desafio 5
 
-Você pode criar um número inteiro aleatório usando a função `arc4random()`. Isso seleciona um número entre 0 e 4294967295. Você pode usar o operador de módulo (%) para truncar esse número aleatório para qualquer intervalo que desejar.
-
-Declare uma constante `randomNumber` e atribua a ela um número aleatório gerado com `arc4random()`. Em seguida, calcule uma constante chamada `diceRoll` e use o número aleatório que você acabou de encontrar para criar um número aleatório entre 1 e 6.
+Você pode gerar um número inteiro aleatório usando a função `Int.random(in:)`, que seleciona um número aleatório dentro de um intervalo.
+Utilize essa função para gerar um número aleatório entre 1 e 6 e guardar em uma constante chamada `diceRoll`.
 
 **Sua SOLUÇÃO deve ser um código**
 
