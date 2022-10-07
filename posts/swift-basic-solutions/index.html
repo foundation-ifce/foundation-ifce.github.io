@@ -1,0 +1,303 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"/><meta name="og:site_name" content="Foundation IFCE"/><link rel="canonical" href="https://foundation-ifce.github.io/posts/swift-basic-solutions"/><meta name="twitter:url" content="https://foundation-ifce.github.io/posts/swift-basic-solutions"/><meta name="og:url" content="https://foundation-ifce.github.io/posts/swift-basic-solutions"/><title>Swift Básico (Solução) | Foundation IFCE</title><meta name="twitter:title" content="Swift Básico (Solução) | Foundation IFCE"/><meta name="og:title" content="Swift Básico (Solução) | Foundation IFCE"/><meta name="description"/><meta name="twitter:description"/><meta name="og:description"/><meta name="twitter:card" content="summary"/><link rel="stylesheet" href="/styles.css" type="text/css"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link rel="shortcut icon" href="/images/favicon.png" type="image/png"/><link rel="alternate" href="/feed.rss" type="application/rss+xml" title="Subscribe to Foundation IFCE"/></head><body class="item-page"><header><div class="wrapper"><a href="/" class="site-name">Foundation IFCE</a></div></header><div class="wrapper"><article><div class="content"><h1>Swift Básico (Solução)</h1><h2>Desafio 1</h2><p>Declare uma constante <code>Int</code> chamada <code>myAge</code> e defina-a igual à sua idade. Declare também uma variável <code>Int</code> chamada <code>dogs</code> e defina-a igual ao número de cachorros que você possui. Então imagine que você comprou um novo filhote e incremente a variável dogs` em um.</p><p><strong>SOLUÇÃO</strong></p><pre><code><span class="keyword">let</span> myAge: <span class="type">Int</span> = <span class="number">28</span>
+<span class="keyword">var</span> dogs: <span class="type">Int</span> = <span class="number">0</span>
+dogs += <span class="number">1</span>
+</code></pre><h2>Desafio 2</h2><p>Dado o seguinte código:</p><pre><code>age = <span class="number">16</span>
+<span class="call">print</span>(age)
+age = <span class="number">30</span>
+<span class="call">print</span>(age)
+</code></pre><p>Declare <code>age</code> de forma que compile. Você usou <code>var</code> ou <code>let</code>?</p><p><strong>SOLUÇÃO</strong></p><pre><code><span class="keyword">var</span> age: <span class="type">Int</span> = <span class="number">16</span>
+<span class="call">print</span>(age)
+age = <span class="number">30</span>
+<span class="call">print</span>(age)
+</code></pre><h2>Desafio 3</h2><p>Declare três constantes chamadas <code>rating1</code>, <code>rating2</code> e <code>rating3</code> do tipo <code>Double</code> e atribua um valor a cada uma. Calcule a média dos três e armazene o resultado em uma constante chamada <code>averageRating</code>.</p><p><strong>SOLUÇÃO</strong></p><pre><code><span class="keyword">let</span> rating1: <span class="type">Double</span> = <span class="number">4</span>
+<span class="keyword">let</span> rating2: <span class="type">Double</span> = <span class="number">2</span>
+<span class="keyword">let</span> rating3: <span class="type">Double</span> = <span class="number">5</span>
+<span class="keyword">let</span> averageRating: <span class="type">Double</span> = (rating1 + rating2 + rating3) / <span class="number">3</span>
+</code></pre><p>Bônus: por que é importante que as constantes sejam do tipo <code>Double</code>?</p><p><strong>SOLUÇÃO</strong></p><p>Se elas fossem do tipo <code>Int</code>, então você só poderia criar uma média que também fosse um <code>Int</code> sem convertê-los primeiro em um <code>Double</code>, e a média pode não ser um número inteiro.</p><h2>Desafio 4</h2><p>A potência de um aparelho elétrico pode ser calculada multiplicando a tensão pela corrente. A resistência de tal aparelho pode ser calculada como a potência dividida pela corrente ao quadrado.</p><ul><li>Declare uma constante chamada <code>voltage</code> do tipo <code>Double</code> e atribua um valor a ela. Em seguida, declare uma constante chamada <code>current</code> do tipo <code>Double</code> e atribua um valor a ela. Finalmente calcule a potência do aparelho elétrico que você acabou de criar armazenando-a em uma constante chamada <code>power</code> do tipo <code>Double</code>.</li></ul><ul><li>Calcule a resistência e armazene-a em uma constante chamada <code>resistance</code> do tipo <code>Double</code>.</li></ul><p><strong>SOLUÇÃO</strong></p><pre><code><span class="keyword">let</span> voltage: <span class="type">Double</span> = <span class="number">240.0</span>
+<span class="keyword">let</span> current: <span class="type">Double</span> = <span class="number">7.5</span>
+<span class="keyword">let</span> power: <span class="type">Double</span> = voltage * current
+<span class="keyword">let</span> resistance = power / (current * current)
+</code></pre><h2>Desafio 5</h2><p>Você pode gerar um número inteiro aleatório usando a função <code>Int.random(in:)</code>, que seleciona um número aleatório dentro de um intervalo. Utilize essa função para gerar um número aleatório entre 1 e 6 e guardar em uma constante chamada <code>diceRoll</code>.</p><p><strong>SOLUÇÃO</strong></p><pre><code><span class="keyword">let</span> diceRoll = <span class="type">Int</span>.<span class="call">random</span>(in: <span class="number">1</span>...<span class="number">6</span>)
+</code></pre><h2>Desafio 6</h2><p>Uma equação quadrática é algo no formato:</p><p><code>a⋅x² + b⋅x + c = 0</code></p><p>Os valores de <code>x</code> que satisfazem isso podem ser resolvidos usando a equação:</p><p><code>x = (-b ± sqrt(b² - 4⋅a⋅c)) / (2⋅a)</code></p><p>Declare três constantes chamadas <code>a</code>, <code>b</code> e <code>c</code> do tipo <code>Double</code>. Em seguida, calcule os dois valores para <code>x</code> usando a equação acima (observando que o ± significa mais ou menos - então um valor de <code>x</code> para cada). Armazene os resultados em constantes chamadas <code>root1</code> e <code>root2</code> do tipo <code>Double</code>.</p><p><strong>SOLUÇÃO</strong></p><pre><code><span class="keyword">let</span> a: <span class="type">Double</span> = <span class="number">2.0</span>
+<span class="keyword">let</span> b: <span class="type">Double</span> = <span class="number">3.0</span>
+<span class="keyword">let</span> c: <span class="type">Double</span> = <span class="number">1.0</span>
+<span class="keyword">let</span> root1: <span class="type">Double</span> = (-b + (b*b - <span class="number">4</span>*a*c).<span class="call">squareRoot</span>()) / (<span class="number">2</span>*a)
+<span class="keyword">let</span> root2: <span class="type">Double</span> = (-b - (b*b - <span class="number">4</span>*a*c).<span class="call">squareRoot</span>()) / (<span class="number">2</span>*a)
+</code></pre><h2>Desafio 7</h2><p>Quais das seguintes atribuições são válidas?</p><pre><code><span class="keyword">let</span> character: <span class="type">Character</span> = <span class="string">"Dog"</span>
+<span class="keyword">let</span> character: <span class="type">Character</span> = <span class="string">"🐶"</span>
+<span class="keyword">let</span> string: <span class="type">String</span> = <span class="string">"Dog"</span>
+<span class="keyword">let</span> string: <span class="type">String</span> = <span class="string">"🐶"</span>
+</code></pre><p><strong>SOLUÇÃO</strong></p><pre><code><span class="comment">//let character: Character = "Dog" // INVÁLIDO
+//let character: Character = "🐶" // VÁLIDO
+//let string: String = "Dog" // VÁLIDO
+//let string: String = "🐶" // VÁLIDO</span>
+</code></pre><h2>Desafio 8</h2><p>Este código é válido?</p><pre><code><span class="keyword">let</span> tuple = (day: <span class="number">15</span>, month: <span class="number">8</span>, year: <span class="number">2015</span>)
+<span class="keyword">let</span> day = tuple.<span class="type">Day</span>
+</code></pre><p><strong>SOLUÇÃO</strong></p><p>Inválido porque deveria ser 'day' em vez de 'Day'</p><h2>Desafio 9</h2><p>Qual é o tipo da constante chamada 'value'?</p><pre><code><span class="keyword">let</span> value = tuple.<span class="number">1</span>
+</code></pre><p><strong>SOLUÇÃO</strong></p><p>value = 8 do tipo Double</p><h2>Desafio 10</h2><p>Qual é o valor da constante chamada <code>month</code>?</p><pre><code><span class="keyword">let</span> month = tuple.<span class="property">month</span>
+</code></pre><p><strong>SOLUÇÃO</strong></p><p>month = 8</p><h2>Desafio 11</h2><p>Qual é o valor da constante chamada <code>summary</code>?</p><pre><code><span class="keyword">let</span> number = <span class="number">10</span>
+<span class="keyword">let</span> multiplier = <span class="number">5</span>
+<span class="keyword">let</span> summary = <span class="string">"</span>\(number) <span class="string">multiplied by</span> \(multiplier) <span class="string">equals</span> \(number * multiplier)<span class="string">"</span>
+</code></pre><p><strong>SOLUÇÃO</strong></p><p>summary = "10 multiplied by 5 equals 50"</p><h2>Desafio 12</h2><p>Qual é a diferença entre <code>Double.pi</code> e <code>Float.pi</code>?</p><pre><code><span class="keyword">let</span> difference = <span class="type">Double</span>.<span class="property">pi</span> - <span class="type">Double</span>(<span class="type">Float</span>.<span class="property">pi</span>)
+</code></pre><p><strong>SOLUÇÃO</strong></p><p>1.50995798975373e-07, ou 0.000000150995798975373</p><p>Float é um pouco menos preciso, então faz sentido promovê-lo a um Double. Double é mais preciso, mas não é exato pois isso exigiria um número infinito de bits.</p><h2>Desafio 13</h2><p>O que há de errado com o código a seguir?</p><pre><code><span class="keyword">let</span> firstName = <span class="string">"Matt"</span>
+
+<span class="keyword">if</span> firstName == <span class="string">"Matt"</span> {
+    <span class="keyword">let</span> lastName = <span class="string">"Galloway"</span>
+} <span class="keyword">else if</span> firstName == <span class="string">"Ray"</span> {
+    <span class="keyword">let</span> lastName = <span class="string">"Wenderlich"</span>
+}
+<span class="keyword">let</span> fullName = firstName + <span class="string">" "</span> + lastName
+</code></pre><p><strong>SOLUÇÃO</strong></p><p><code>lastName</code> não está mais no escopo ao definir <code>fullName</code>. Uma solução correta:</p><pre><code><span class="keyword">let</span> firstName = <span class="string">"Matt"</span>
+<span class="keyword">var</span> lastName = <span class="string">""</span>
+<span class="keyword">if</span> firstName == <span class="string">"Matt"</span> {
+    lastName = <span class="string">"Galloway"</span>
+} <span class="keyword">else if</span> firstName == <span class="string">"Ray"</span> {
+    lastName = <span class="string">"Wenderlich"</span>
+}
+<span class="keyword">let</span> fullName = firstName + <span class="string">" "</span> + lastName
+</code></pre><h2>Desafio 14</h2><p>Em cada uma das seguintes afirmações, qual é o valor da constante booleana <code>answer</code>?</p><pre><code><span class="keyword">let</span> answer1 = <span class="keyword">true</span> &amp;&amp; <span class="keyword">true
+let</span> answer2 = <span class="keyword">false</span> || <span class="keyword">false
+let</span> answer3 = (<span class="keyword">true</span> &amp;&amp; <span class="number">1</span> != <span class="number">2</span>) || (<span class="number">4</span> &gt; <span class="number">3</span> &amp;&amp; <span class="number">100</span> &lt; <span class="number">1</span>)
+<span class="keyword">let</span> answer4 = ((<span class="number">10</span> / <span class="number">2</span>) &gt; <span class="number">3</span>) &amp;&amp; ((<span class="number">10</span> % <span class="number">2</span>) == <span class="number">0</span>)
+</code></pre><p><strong>SOLUÇÃO</strong></p><pre><code><span class="keyword">let</span> answer1 = <span class="keyword">true</span> &amp;&amp; <span class="keyword">true</span> <span class="comment">// true</span>
+<span class="keyword">let</span> answer2 = <span class="keyword">false</span> || <span class="keyword">false</span> <span class="comment">// false</span>
+<span class="keyword">let</span> answer3 = (<span class="keyword">true</span> &amp;&amp; <span class="number">1</span> != <span class="number">2</span>) || (<span class="number">4</span> &gt; <span class="number">3</span> &amp;&amp; <span class="number">100</span> &lt; <span class="number">1</span>) <span class="comment">// true</span>
+<span class="keyword">let</span> answer4 = ((<span class="number">10</span> / <span class="number">2</span>) &gt; <span class="number">3</span>) &amp;&amp; ((<span class="number">10</span> % <span class="number">2</span>) == <span class="number">0</span>) <span class="comment">// true</span>
+</code></pre><h2>Desafio 15</h2><p>Imagine que você está jogando um jogo de cobras e escadas que vai da posição 1 à posição 20. Nele, existem escadas na posição 3 e 7 que levam você para a 15 e 12 respectivamente. Depois, há cobras nas posições 11 e 17 que o levam para 2 e 9, respectivamente.</p><p>Crie uma constante chamada <code>currentPosition</code> que você pode definir para qualquer posição entre 1 e 20 que desejar. Em seguida, crie uma constante chamada <code>diceRoll</code> que você pode definir para qualquer lançamento de dados que desejar. Por fim, calcule a posição final levando em consideração as escadas e cobras, chamando-a de <code>nextPosition</code>.</p><pre><code><span class="keyword">let</span> currentPosition = <span class="number">2</span>
+<span class="keyword">let</span> diceRoll = <span class="number">5</span>
+<span class="keyword">var</span> nextPosition = currentPosition + diceRoll
+<span class="keyword">if</span> nextPosition == <span class="number">3</span> {
+    nextPosition = <span class="number">15</span>
+} <span class="keyword">else if</span> nextPosition == <span class="number">7</span> {
+    nextPosition = <span class="number">12</span>
+} <span class="keyword">else if</span> nextPosition == <span class="number">11</span> {
+    nextPosition = <span class="number">2</span>
+} <span class="keyword">else if</span> nextPosition == <span class="number">17</span> {
+    nextPosition = <span class="number">9</span>
+}
+<span class="call">print</span>(<span class="string">"Board position after</span> \(currentPosition) <span class="string">is</span> \(nextPosition)<span class="string">"</span>)
+</code></pre><h2>Desafio 16</h2><p>Dado um ano representado por um <code>Int</code> e um mês representado por um <code>String</code> em letras minúsculas e usando as três primeiras letras, calcule o número de dias do mês. Você precisa contabilizar os anos bissextos lembrando que fevereiro ("fev") tem 29 dias em um ano bissexto e 28 em caso contrário. Um ano bissexto ocorre a cada 4 anos, a menos que o ano seja divisível por 100, mas se for divisível por 400, na verdade é um ano bissexto.</p><p><strong>SOLUÇÃO</strong></p><pre><code><span class="keyword">let</span> month = <span class="string">"feb"</span>
+<span class="keyword">let</span> year = <span class="number">2016</span>
+<span class="keyword">var</span> days = <span class="number">0</span>
+<span class="keyword">if</span> month == <span class="string">"jan"</span> || month == <span class="string">"mar"</span> || month == <span class="string">"may"</span> || month == <span class="string">"jul"</span> || month == <span class="string">"aug"</span> || month == <span class="string">"oct"</span> || month == <span class="string">"dec"</span> {
+    days = <span class="number">31</span>
+} <span class="keyword">else if</span> month == <span class="string">"apr"</span> || month == <span class="string">"jun"</span> || month == <span class="string">"sep"</span> || month == <span class="string">"nov"</span> {
+    days = <span class="number">30</span>
+} <span class="keyword">else if</span> month == <span class="string">"feb"</span> {
+    <span class="keyword">if</span> (year % <span class="number">4</span> == <span class="number">0</span> &amp;&amp; year % <span class="number">100</span> != <span class="number">0</span> || year % <span class="number">400</span> == <span class="number">0</span>) {
+        days = <span class="number">29</span>
+    } <span class="keyword">else</span> {
+        days = <span class="number">28</span>
+    }
+}
+<span class="keyword">if</span> days &gt; <span class="number">0</span> {
+    <span class="call">print</span>(<span class="string">"</span>\(month) <span class="string">has 31 days"</span>)
+} <span class="keyword">else</span> {
+    <span class="call">print</span>(<span class="string">"Invalid month!"</span>)
+}
+</code></pre><h2>Desafio 17</h2><p>Dado um número, determine a próxima potência de 2 acima ou igual a esse número.</p><p><strong>SOLUÇÃO</strong></p><pre><code><span class="keyword">let</span> number = <span class="number">946</span>
+<span class="keyword">var</span> trial = <span class="number">1</span>
+<span class="keyword">var</span> times = <span class="number">0</span>
+<span class="keyword">while</span> trial &lt; <span class="call">number</span> {
+    trial = trial * <span class="number">2</span>
+    times += <span class="number">1</span>
+}
+<span class="call">print</span>(<span class="string">"Next power of 2 &gt;=</span> \(number) <span class="string">is</span> \(trial) <span class="string">which is 2 to the power of</span> \(times)<span class="string">"</span>)
+</code></pre><h2>Desafio 18</h2><p>Dado um número, imprima o número triangular para esse número. Você pode se atualizar sobre números triangulares aqui: <a href="https://pt.wikipedia.org/wiki/Número_triangular">https://pt.wikipedia.org/wiki/Número_triangular</a></p><p><strong>SOLUÇÃO</strong></p><pre><code><span class="keyword">var</span> depth = <span class="number">5</span>
+<span class="keyword">var</span> count = <span class="number">1</span>
+<span class="keyword">var</span> triangularNumber = <span class="number">0</span>
+<span class="keyword">while</span> count &lt;= <span class="call">depth</span> {
+    triangularNumber += count
+    count += <span class="number">1</span>
+}
+<span class="call">print</span>(<span class="string">"Triangular number with depth</span> \(depth) <span class="string">is</span> \(triangularNumber)<span class="string">"</span>)
+</code></pre><h2>Desafio 19</h2><p>Calcule o enésimo número de Fibonacci. Lembre-se de que os números de Fibonacci iniciam sua sequência com 1 e 1 e, em seguida, os números subsequentes na sequência são iguais aos dois valores anteriores somados. Você pode se atualizar aqui: <a href="https://pt.wikipedia.org/wiki/Sequência_de_Fibonacci">https://pt.wikipedia.org/wiki/Sequência<em>de</em>Fibonacci</a></p><p><strong>SOLUÇÃO</strong></p><pre><code><span class="keyword">let</span> n = <span class="number">10</span>
+<span class="keyword">var</span> current = <span class="number">1</span>
+<span class="keyword">var</span> previous = <span class="number">1</span>
+<span class="keyword">var</span> done = <span class="number">2</span>
+<span class="keyword">while</span> done &lt; <span class="call">n</span> {
+    <span class="keyword">let</span> next = current + previous
+    previous = current
+    current = next
+    done += <span class="number">1</span>
+}
+<span class="call">print</span>(<span class="string">"Fibonacci number</span> \(n) <span class="string">is</span> \(current)<span class="string">"</span>)
+</code></pre><h2>Desafio 20</h2><p>Use um loop para imprimir a tabuada até 12 de um dado número.</p><p><strong>SOLUÇÃO</strong></p><pre><code><span class="keyword">let</span> factor = <span class="number">7</span>
+<span class="keyword">var</span> i = <span class="number">0</span>
+<span class="keyword">var</span> accumulator = <span class="number">0</span>
+<span class="keyword">while</span> i &lt;= <span class="number">12</span> {
+    <span class="call">print</span>(<span class="string">"</span>\(factor) <span class="string">x</span> \(i) <span class="string">=</span> \(accumulator)<span class="string">"</span>)
+    accumulator += <span class="number">7</span>
+    i += <span class="number">1</span>
+}
+</code></pre><h2>Desafio 21</h2><p>Imprima uma tabela mostrando o número de combinações para criar cada número de 2 a 12 dados 2 dados de seis lados. Você não deve usar uma fórmula, mas sim calcular o número de combinações exaustivamente considerando cada possível lançamento de dados.</p><p><strong>SOLUÇÃO</strong></p><pre><code><span class="keyword">var</span> target = <span class="number">2</span>
+<span class="keyword">while</span> target &lt;= <span class="number">12</span> {
+    <span class="keyword">var</span> combinationsFound = <span class="number">0</span>
+    <span class="keyword">var</span> valueOnFirstDice = <span class="number">1</span>
+    <span class="keyword">while</span> valueOnFirstDice &lt;= <span class="number">6</span> {
+        <span class="keyword">var</span> valueOnSecondDice = <span class="number">1</span>
+        <span class="keyword">while</span> valueOnSecondDice &lt;= <span class="number">6</span> {
+          <span class="keyword">if</span> valueOnFirstDice + valueOnSecondDice == target {
+            combinationsFound += <span class="number">1</span>
+          }
+          valueOnSecondDice += <span class="number">1</span>
+        }
+        valueOnFirstDice += <span class="number">1</span>
+    }
+    <span class="call">print</span>(<span class="string">"</span>\(target)<span class="string">:\t</span>\(combinationsFound)<span class="string">"</span>)
+    target += <span class="number">1</span>
+}
+</code></pre><h2>Desafio 22</h2><p>No loop <code>for</code> a seguir:</p><pre><code><span class="keyword">var</span> sum = <span class="number">0</span>
+<span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">0</span>...<span class="number">5</span> {
+    sum += i
+}
+</code></pre><p>Qual será o valor de <code>sum</code> e quantas iterações acontecerão?</p><p><strong>SOLUÇÃO</strong></p><p>soma = 15, 6 iterações (0, 1, 2, 3, 4, 5)</p><h2>Desafio 23</h2><p>No loop <code>while</code> abaixo:</p><pre><code><span class="keyword">var</span> aLotOfAs = <span class="string">""</span>
+<span class="keyword">while</span> aLotOfAs.<span class="property">count</span> &lt; <span class="number">10</span> {
+    aLotOfAs += <span class="string">"a"</span>
+}
+</code></pre><p>Quantas instâncias do caractere “a” haverá em <code>aLotOfAs</code>? Dica: <code>aLotOfAs.count</code> lhe dirá quantos caracteres existem na string <code>aLotOfAs</code>.</p><p><strong>SOLUÇÃO</strong></p><p><code>aLotOfAs</code> contém 10 instâncias de "a"</p><h2>Desafio 24</h2><p>Considere a seguinte instrução switch:</p><pre><code><span class="keyword">switch</span> coordinates {
+    <span class="keyword">case let</span> (x, y, z) <span class="keyword">where</span> x == y &amp;&amp; y == z:
+        <span class="call">print</span>(<span class="string">"x = y = z"</span>)
+    <span class="keyword">case</span> (<span class="keyword">_</span>, <span class="keyword">_</span>, <span class="number">0</span>):
+        <span class="call">print</span>(<span class="string">"On the x/y plane"</span>)
+    <span class="keyword">case</span> (<span class="keyword">_</span>, <span class="number">0</span>, <span class="keyword">_</span>):
+        <span class="call">print</span>(<span class="string">"On the x/z plane"</span>)
+    <span class="keyword">case</span> (<span class="number">0</span>, <span class="keyword">_</span>, <span class="keyword">_</span>):
+        <span class="call">print</span>(<span class="string">"On the y/z plane"</span>)
+    <span class="keyword">default</span>:
+        <span class="call">print</span>(<span class="string">"Nothing special"</span>)
+}
+</code></pre><p>O que esse código imprimirá quando as coordenadas forem cada uma das seguintes?</p><pre><code><span class="keyword">let</span> coordinates = (<span class="number">1</span>, <span class="number">5</span>, <span class="number">0</span>)
+<span class="keyword">let</span> coordinates = (<span class="number">2</span>, <span class="number">2</span>, <span class="number">2</span>)
+<span class="keyword">let</span> coordinates = (<span class="number">3</span>, <span class="number">0</span>, <span class="number">1</span>)
+<span class="keyword">let</span> coordinates = (<span class="number">3</span>, <span class="number">2</span>, <span class="number">5</span>)
+<span class="keyword">let</span> coordinates = (<span class="number">0</span>, <span class="number">2</span>, <span class="number">4</span>)
+</code></pre><p><strong>SOLUÇÃO</strong></p><pre><code><span class="keyword">let</span> coordinates = (<span class="number">1</span>, <span class="number">5</span>, <span class="number">0</span>) <span class="comment">// "On the x/y plane"</span>
+<span class="keyword">let</span> coordinates = (<span class="number">2</span>, <span class="number">2</span>, <span class="number">2</span>) <span class="comment">// "x = y = z"</span>
+<span class="keyword">let</span> coordinates = (<span class="number">3</span>, <span class="number">0</span>, <span class="number">1</span>) <span class="comment">// "On the x/z plane"</span>
+<span class="keyword">let</span> coordinates = (<span class="number">3</span>, <span class="number">2</span>, <span class="number">5</span>) <span class="comment">// "Nothing special"</span>
+<span class="keyword">let</span> coordinates = (<span class="number">0</span>, <span class="number">2</span>, <span class="number">4</span>) <span class="comment">// "On the y/z plane"</span>
+</code></pre><h2>Desafio 25</h2><p>Imprima uma contagem regressiva de 10 a 0. (Observação: não use o método <code>reversed()</code>, que será apresentado posteriormente.)</p><p><strong>SOLUÇÃO</strong></p><pre><code><span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">0</span>...<span class="number">10</span> {
+    <span class="call">print</span>(<span class="number">10</span> - i)
+}
+</code></pre><h2>Desafio 26</h2><p>Imprimir 0,0, 0,1, 0,2, 0,3, 0,4, 0,5, 0,6, 0,7, 0,8, 0,9, 1,0.</p><p><strong>SOLUÇÃO</strong></p><pre><code><span class="keyword">var</span> value = <span class="number">0.0</span>
+<span class="keyword">for _ in</span> <span class="number">0</span>...<span class="number">10</span> {
+    <span class="call">print</span>(value)
+    value += <span class="number">0.1</span>
+}
+<span class="comment">// Solução alternativa</span>
+<span class="keyword">for</span> counter <span class="keyword">in</span> <span class="number">0</span>...<span class="number">10</span> {
+    <span class="call">print</span>(<span class="type">Double</span>(counter) * <span class="number">0.1</span>)
+}
+</code></pre><h2>Desafio 27</h2><p>As funções <code>stride(from:to:by:)</code> e <code>stride(from:through:by:)</code> do Swift permitem que você faça loops com muito mais flexibilidade. Por exemplo, se você quiser fazer um loop de 10 a 20 em intervalos de 4 você pode escrever:</p><pre><code><span class="keyword">for</span> index <span class="keyword">in</span> <span class="call">stride</span>(from: <span class="number">10</span>, to: <span class="number">22</span>, by: <span class="number">4</span>) {
+    <span class="call">print</span>(index)
+}
+<span class="comment">// imprime 10, 14, 18</span>
+
+<span class="keyword">for</span> index <span class="keyword">in</span> <span class="call">stride</span>(from: <span class="number">10</span>, through: <span class="number">22</span>, by: <span class="number">4</span>) {
+    <span class="call">print</span>(index)
+}
+<span class="comment">// imprime 10, 14, 18, and 22</span>
+</code></pre><ul><li>Qual é a diferença entre as duas sobrecargas das funções stride?</li></ul><p><strong>SOLUÇÃO</strong></p><p>stride(from:to:by:) NÃO inclui o número final (como intervalo semi-aberto)</p><p>stride(from:through:by:) inclui o número final (como intervalo fechado)</p><ul><li>Escreva um loop que vá de 10.0 a (e incluindo) 9.0, decrementando em 0.1.</li></ul><pre><code><span class="keyword">for</span> index <span class="keyword">in</span> <span class="call">stride</span>(from: <span class="number">10</span>, through: <span class="number">9</span>, by: -<span class="number">0.1</span>) {
+    <span class="call">print</span>(index)
+}
+</code></pre><h2>Desafio 29</h2><p>Quando estamos nos familiarizando com uma linguagem de programação um exercício útil é escrever uma função para determinar se um número é primo ou não.</p><p>Primeiro, escreva a seguinte função:</p><pre><code><span class="keyword">func</span> isNumberDivisible(<span class="keyword">_</span> number: <span class="type">Int</span>, by divisor: <span class="type">Int</span>) -&gt; <span class="type">Bool</span>
+</code></pre><p>Você usará ela para determinar se um número é divisível por outro. Deve retornar <code>true</code> quando <code>number</code> for divisível por <code>divisor</code>.</p><p><strong>Dica</strong>: Você pode usar o operador módulo (<code>%</code>) para te ajudar.</p><p>Em seguida, escreva a função principal:</p><pre><code><span class="keyword">func</span> isPrime(<span class="keyword">_</span> number: <span class="type">Int</span>) -&gt; <span class="type">Bool</span>
+</code></pre><p>Ela deve retornar <code>true</code> se <code>number</code> for primo e <code>false</code> caso contrário. Um número é primo se for divisível apenas por 1 e por ele mesmo. Você deve percorrer os números de 1 ao número e encontrar os divisores do número. Se ele tiver outros divisores além de 1 e ele mesmo, então o número não é primo. Você precisará usar a função <code>isNumberDivisible(_:by:)</code> que escreveu anteriormente.</p><p>Use esta função para verificar os seguintes casos:</p><pre><code><span class="call">isPrime</span>(<span class="number">6</span>) <span class="comment">// false</span>
+isPrime(<span class="number">13</span>) <span class="comment">// true</span>
+isPrime(<span class="number">8893</span>) <span class="comment">// true</span>
+</code></pre><p><strong>Dica 1</strong>: Números menores que 0 não devem ser considerados primos. Verifique este caso no início da função e retorne antecipadamente se o número for menor que 0.</p><p><strong>Dica 2</strong>: Use um loop <code>for</code> para encontrar divisores. Se você começar em dois e terminar antes do próprio número, assim que encontrar um divisor, poderá retornar <code>false</code>.</p><p><strong>Dica 3</strong>: Se você quiser um código <em>bem</em> mais legal, você pode simplesmente fazer um loop de dois até chegar à raiz quadrada de <code>number</code> em vez de ir até o próprio <code>number</code>. Vou deixar como exercício para você descobrir o porquê. Pode ser útil pensar no número 16, cuja raiz quadrada é 4. Os divisores de 16 são 1, 2, 4, 8 e 16.</p><p><strong>SOLUÇÃO</strong></p><pre><code><span class="keyword">func</span> isNumberDivisible(<span class="keyword">_</span> number: <span class="type">Int</span>, by divisor: <span class="type">Int</span>) -&gt; <span class="type">Bool</span> {
+    number % divisor == <span class="number">0</span>
+}
+<span class="keyword">func</span> isPrime(<span class="keyword">_</span> number: <span class="type">Int</span>) -&gt; <span class="type">Bool</span> {
+    <span class="keyword">if</span> number &lt; <span class="number">0</span> {
+        <span class="keyword">return false</span>
+    } 
+    <span class="comment">// Lidamos com esses casos antecipadamente porque queremos ter certeza de que o intervalo 2...root (usado abaixo) é válido, o que é o caso apenas quando root &gt;= 2, portanto, para números &gt;= 4.</span>
+    <span class="keyword">if</span> number &lt;= <span class="number">3</span> {
+        <span class="keyword">return true</span>
+    }
+    <span class="keyword">let</span> doubleNumber = <span class="type">Double</span>(number)
+    <span class="keyword">let</span> root = <span class="type">Int</span>(doubleNumber.<span class="call">squareRoot</span>())
+    <span class="keyword">for</span> divisor <span class="keyword">in</span> <span class="number">2</span>...root {
+        <span class="keyword">if</span> <span class="call">isNumberDivisible</span>(number, by: divisor) {
+            <span class="keyword">return false</span>
+        }
+    }
+    <span class="keyword">return true</span>
+}
+</code></pre><h2>Desafio 30</h2><p>Neste desafio, você verá o que acontece quando uma função chama <em>a si mesma</em>, um comportamento chamado <strong>recursão</strong>. Isso pode parecer estranho, mas pode ser bastante útil.</p><p>Você vai escrever uma função que calcula um valor da <strong>sequência de Fibonacci</strong>. Qualquer valor na sequência é a soma dos dois valores anteriores. A sequência é definida de forma que os dois primeiros valores sejam iguais a 1. Ou seja, <code>fibonacci(1) = 1</code> e <code>fibonacci(2) = 1</code>.</p><p>Escreva sua função usando a seguinte declaração:</p><pre><code><span class="keyword">func</span> fibonacci(<span class="keyword">_</span> number: <span class="type">Int</span>) -&gt; <span class="type">Int</span>
+</code></pre><p>Em seguida, verifique se você escreveu a função corretamente executando-a com os seguintes números:</p><pre><code><span class="call">fibonacci</span>(<span class="number">1</span>)  <span class="comment">// = 1</span>
+<span class="call">fibonacci</span>(<span class="number">2</span>)  <span class="comment">// = 1</span>
+<span class="call">fibonacci</span>(<span class="number">3</span>)  <span class="comment">// = 2</span>
+<span class="call">fibonacci</span>(<span class="number">4</span>)  <span class="comment">// = 3</span>
+<span class="call">fibonacci</span>(<span class="number">5</span>)  <span class="comment">// = 5</span>
+<span class="call">fibonacci</span>(<span class="number">10</span>) <span class="comment">// = 55</span>
+</code></pre><p><strong>Dica 1</strong>: Para valores de <code>number</code> menores que 0, você deve retornar 0.</p><p><strong>Dica 2</strong>: Para iniciar a sequência, codifique um valor de retorno de 1 quando <code>number</code> for igual a 1 ou 2.</p><p><strong>Dica 3</strong>: Para qualquer outro valor, você precisará retornar a soma de chamar <code>fibonacci</code> com <code>number - 1</code> e <code>number - 2</code>.</p><p><strong>SOLUÇÃO</strong></p><pre><code><span class="keyword">func</span> fibonacci(<span class="keyword">_</span> number: <span class="type">Int</span>) -&gt; <span class="type">Int</span> {
+    <span class="keyword">if</span> number &lt;= <span class="number">0</span> {
+        <span class="keyword">return</span> <span class="number">0</span>
+    }
+    <span class="keyword">if</span> number == <span class="number">1</span> || number == <span class="number">2</span> {
+        <span class="keyword">return</span> <span class="number">1</span>
+    }
+    <span class="keyword">return</span> <span class="call">fibonacci</span>(number - <span class="number">1</span>) + <span class="call">fibonacci</span>(number - <span class="number">2</span>)
+}
+</code></pre><h2>Desafio 31</h2><p>Quais das seguintes linhas de código são válidas?</p><pre><code><span class="keyword">var</span> name: <span class="type">String</span>? = <span class="string">"Ray"</span>
+<span class="keyword">var</span> age: <span class="type">Int</span> = <span class="keyword">nil
+let</span> distance: <span class="type">Float</span> = <span class="number">26.7</span>
+<span class="keyword">var</span> middleName: <span class="type">String</span>? = <span class="keyword">nil</span>
+</code></pre><p><strong>SOLUÇÃO</strong></p><pre><code><span class="keyword">var</span> name: <span class="type">String</span>? = <span class="string">"Ray"</span> <span class="comment">// Válido</span>
+<span class="keyword">var</span> age: <span class="type">Int</span> = <span class="keyword">nil</span> <span class="comment">// Invalido: nil só pode ser usado com tipos optional</span>
+<span class="keyword">let</span> distance: <span class="type">Float</span> = <span class="number">26.7</span> <span class="comment">// Válido</span>
+<span class="keyword">var</span> middleName: <span class="type">String</span>? = <span class="keyword">nil</span> <span class="comment">// Válido</span>
+</code></pre><h2>Desafio 32</h2><p>Primeiro, crie uma função que retorne o número de vezes que um inteiro pode ser dividido por outro inteiro sem deixar resto. A função deve retornar <code>nil</code> se a divisão não produzir um número inteiro. Nomeie a função <code>divideIfWhole</code>.</p><p>Em seguida, escreva o código que tenta fazer o unwrap do resultado optional da função. Deve haver dois casos: em caso de sucesso, imprima <code>"Sim, ele divide \(resposta) vezes"</code>, e em caso de falha, imprima <code>"Indivisível :["</code>.</p><p>Por fim, teste sua função:</p><ol><li>Divida 10 por 2. Ela deve imprimir <code>"Sim, ele divide 5 vezes."</code></li><li>Divida 10 por 3. Ela deve imprimir <code>"Indivisível :[."</code></li></ol><p><strong>Dica 1</strong>: Use o seguinte trecho de código como o início da assinatura da função:</p><pre><code><span class="keyword">func</span> divideIfWhole(<span class="keyword">_</span> value: <span class="type">Int</span>, by divisor: <span class="type">Int</span>)
+</code></pre><p>Você precisará adicionar o tipo de retorno, que será optional!</p><p><strong>Dica 2</strong>: Você pode usar o operador de módulo (<code>%</code>) para determinar se um valor é divisível por outro; lembre-se que esta operação retorna o resto da divisão de dois números. Por exemplo, <code>10 % 2 = 0</code> significa que 10 é divisível por 2 sem resto, enquanto <code>10 % 3 = 1</code> significa que 10 é divisível por 3 com resto 1.</p><p><strong>SOLUÇÃO</strong></p><pre><code><span class="keyword">func</span> divideIfWhole(<span class="keyword">_</span> value: <span class="type">Int</span>, by divisor: <span class="type">Int</span>) -&gt; <span class="type">Int</span>? {
+    <span class="keyword">if</span> value % divisor == <span class="number">0</span> {
+        <span class="keyword">return</span> value / divisor
+    } <span class="keyword">else</span> {
+        <span class="keyword">return nil</span>
+    }
+}
+<span class="keyword">if let</span> answer = <span class="call">divideIfWhole</span>(<span class="number">10</span>, by: <span class="number">2</span>) {
+    <span class="call">print</span>(<span class="string">"Sim, ele divide</span> \(answer) <span class="string">vezes."</span>)
+} <span class="keyword">else</span> {
+    <span class="call">print</span>(<span class="string">"Indivisível :[."</span>)
+}
+<span class="keyword">if let</span> answer = <span class="call">divideIfWhole</span>(<span class="number">10</span>, by: <span class="number">3</span>) {
+    <span class="call">print</span>(<span class="string">"Sim, ele divide</span> \(answer) <span class="string">vezes."</span>)
+} <span class="keyword">else</span> {
+    <span class="call">print</span>(<span class="string">"Indivisível :[."</span>)
+}
+</code></pre><h2>Desafio 33</h2><p>O código que você escreveu no último desafio usou instruções <code>if</code>. Neste desafio, refatore esse código para usar o operador nil coalescing. Desta vez, imprima <code>"Divida X vezes"</code> em todos os casos, mas se a divisão não resultar em um número inteiro, então <code>X</code> deve ser <code>0</code>.</p><p><strong>SOLUÇÃO</strong></p><pre><code><span class="keyword">let</span> answer1 = <span class="call">divideIfWhole</span>(<span class="number">10</span>, by: <span class="number">2</span>) ?? <span class="number">0</span>
+<span class="call">print</span>(<span class="string">"Divida</span> \(answer1) <span class="string">vezes."</span>)
+<span class="keyword">let</span> answer2 = <span class="call">divideIfWhole</span>(<span class="number">10</span>, by: <span class="number">3</span>) ?? <span class="number">0</span>
+<span class="call">print</span>(<span class="string">"Divida</span> \(answer2) <span class="string">vezes."</span>)
+</code></pre><h2>Desafio 34</h2><p>Considere o seguinte optional aninhado. Ele corresponde a um número dentro de uma caixa dentro de uma caixa dentro de uma caixa.</p><pre><code><span class="keyword">let</span> number: <span class="type">Int</span>??? = <span class="number">10</span>
+</code></pre><p>Se você imprimir o número, obterá o seguinte:</p><pre><code><span class="call">print</span>(number)
+<span class="comment">// Optional(Optional(Optional(10)))</span>
+
+<span class="call">print</span>(number!)
+<span class="comment">// Optional(Optional(10))</span>
+</code></pre><ol><li>Faça force unwrap e imprima o <code>number</code>.</li><li>Faça o optional binding de <code>number</code> com if let.</li><li>Escreva uma função <code>printNumber(_ number: Int???)</code> que use <code>guard</code> para imprimir o número somente se ele tiver valores diferentes de nulo.</li></ol><p><strong>SOLUÇÃO</strong></p><pre><code><span class="keyword">let</span> number: <span class="type">Int</span>??? = <span class="number">10</span>
+<span class="comment">// 1</span>
+<span class="call">print</span>(number!!!)
+<span class="comment">// 2</span>
+<span class="keyword">if let</span> number = number {
+    <span class="keyword">if let</span> number = number {
+        <span class="keyword">if let</span> number = number {
+            <span class="call">print</span>(number)
+        }
+    }
+}
+<span class="comment">// Uma maneira melhor de fazer o optional binding sem todos os {}</span>
+<span class="keyword">if let</span> n1 = number, <span class="keyword">let</span> n2 = n1, <span class="keyword">let</span> n3 = n2 {
+    <span class="call">print</span>(n3)
+}
+<span class="comment">// 3</span>
+<span class="keyword">func</span> printNumber(<span class="keyword">_</span> number: <span class="type">Int</span>???) {
+    <span class="keyword">guard let</span> n1 = number, <span class="keyword">let</span> n2 = n1, <span class="keyword">let</span> n3 = n2 <span class="keyword">else</span> {
+        <span class="keyword">return</span>
+    }
+    <span class="call">print</span>(n3)
+}
+</code></pre></div><span>Tagged with: </span><ul class="tag-list"></ul></article></div><footer><p>Generated using <a href="https://github.com/johnsundell/publish">Publish</a></p></footer></body></html>
