@@ -1,4 +1,4 @@
-# Swift Básico 1
+# Swift Básico
 
 ## Desafio 1
 
